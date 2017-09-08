@@ -1,4 +1,4 @@
-const defaultStyle = { bg: "rgba(0, 0, 200, 0.4)" };
+const defaultStyle = { bg: "rgba(0, 0, 200, 0.2)", border: "white" };
 
-export default Circle = (position, radius, style = defaultStyle) =>
-  ({ position, radius, style, type: "circle" });
+export default (x, y, radius, style = defaultStyle) =>
+  ({ x, y, radius, style, type: "circle" });

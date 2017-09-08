@@ -1,7 +1,12 @@
-import { randomInt } from "../libs/math/random.js";
+import { randomInt, randomEntry } from "../libs/math/random.js";
+import * as MonsterTypes from "./monster-types.js";
+
 
 const randomizeGender = () =>
   ["female", "male"][randomInt(0, 2)];
 
-export const Monster = (type, position, gender = randomizeGender()) =>
-  ({ type, position });
+const randomizeType = () =>
+  randomEntry(MonsterTypes);
+
+export default (x, y, type = randomizeType(), gender = randomizeGender()) =>
+  ({ type, x, y, gender });

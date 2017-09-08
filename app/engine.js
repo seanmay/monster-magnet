@@ -1,3 +1,10 @@
+import { compose, zip, appendEntry   } from "../libs/fp/core.js";
+import { randomInt } from "../libs/math/random.js";
+import loadImage from "../libs/graphics/load-image.js";
+import Monster from "./monster.js";
+
+
+
 const buildAssetUrl = type => `../assets/${type}.png`;
 
 export const loadAssets = (assetList) =>
@@ -14,5 +21,19 @@ export const render = (ctx, assets, entities) => {
     circle: renderCircle,
     line: renderLine,
   };
-  entities.forEach(entity => );
+  entities.forEach(() => {});
+};
+
+export const generateMonsters = (count, { left, top, right, bottom }) => {
+  return Array.from({ length: count })
+    .map(() => Monster(randomInt(left, right), randomInt(top, bottom)));
+};
+
+export const generateVictims = (count, { left, top, right, bottom }) => {
+  return Array.from({ length: count })
+    .map(() => ({
+      x: randomInt(left, right),
+      y: randomInt(top, bottom),
+      type: "victim",
+    }));
 };

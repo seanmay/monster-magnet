@@ -4,10 +4,29 @@
   <head>
     <meta charset="utf-8">
     <title>Monster Magnet</title>
+    <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
-    <script type="module" src="index.js"></script>
-    <h1>Monster Magnet</h1>
-    <main></main>
+    <script type="module" src="./index.js"></script>
+    <header class="Header">
+      <section class="Prediction dimmed">
+        <span class="Prediction-text">Victim will likely become:</span>
+        <output class="Prediction-value">???</output>
+      </section>
+    </header>
+    <main class="Main">
+      <img class="Main-backdrop" src="./assets/fog.gif" width="800" height="400"/>
+      <canvas class="Canvas" width="800" height="400"></canvas>
+    </main>
+    <section class="Controls">
+      <button class="Button MonsterButton">Generate Monsters</button>
+      <button class="Button VictimButton">Place Victim</button>
+      <button class="Button PredictButton">Predict Outcome</button>
+      <button class="Button CurtainButton">...Magick?!?</button>
+    </section>
+    <div class="Controls">
+      <button class="Button TerrainButton">Generate Terrain</button>
+      <label>Coarseness: <input class="Input TerrainBlockWidth" value="20"></label>
+    </div>
   </body>
 </html>

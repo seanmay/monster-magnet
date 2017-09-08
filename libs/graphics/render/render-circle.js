@@ -1,5 +1,5 @@
 export default (ctx, circle) => {
-  const { style, position: { x, y }, radius } = circle;
+  const { style, x, y, radius } = circle;
 
   ctx.save();
   ctx.fillStyle = style.bg || ctx.fillStyle;

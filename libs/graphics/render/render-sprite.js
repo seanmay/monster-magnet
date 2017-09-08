@@ -1,13 +1,10 @@
 export default (ctx, sprite) => {
-  const {
-    rect: { x, y, width, height },
-    image,
-    scale,
-  };
+  const { rect, image, scale } = sprite;
+  const { x, y, width, height } = rect;
 
   const scaledWidth = width * scale;
   const scaledHeight = height * scale;
-  const halfWidth = scaledWith/2;
+  const halfWidth = scaledWidth/2;
   const halfHeight = scaledHeight/2;
 
   ctx.save();
