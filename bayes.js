@@ -6,7 +6,8 @@ const tokenizer = new natural.WordTokenizer();
 
 const fpDocuments = [
   `partial application allows us to pre-apply arguments to a function`,
-  `pure functions modify no external state, nor do they change behaviour based on external influence`,
+  `pure functions modify no external state, `
+  + `nor do they change behaviour based on external influence`,
   `compose pure functions into larger pure functions`,
   `each function should have a clear and concise interface`,
 ];
@@ -19,20 +20,6 @@ const ooDocuments = [
   `build to an interface, rather than a base class`,
 ];
 
-
-// const compositionDocuments = [
-//   `partial application allows us to pre-apply arguments to a function`,
-//   `compose pure functions into larger pure functions`,
-//   `favour composition of classes, rather than inheritance of types`,
-// ];
-
-
-const testDocuments = [
-  `composition of pure functions creates another pure function`,
-  `avoid inheriting from abstract base classes`,
-  `cookies are a sometimes food`,
-  `interface with base class`,
-];
 
 
 const prepareTokens = document =>
@@ -57,8 +44,15 @@ const classifier = new natural.BayesClassifier();
 
 prepareClassifier(classifier, [ [fpDocuments, 'functional'],
                                 [ooDocuments, 'object-oriented'] ]);
+const testDocuments = [
+  `composition of pure functions creates another pure function`,
+  `avoid inheriting from abstract base classes`,
+  `cookies are a sometimes food`,
+  `interface with base class`
+];
 
-const results = testDocuments.map(test => `${classifier.classify(test)}: ${test}`);
+const results = testDocuments
+  .map(test => `${classifier.classify(test)}: ${test}`);
 console.log(results);
 
 const test1 = "\nfunctions should be pure";

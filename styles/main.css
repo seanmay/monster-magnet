@@ -9,6 +9,9 @@ body {
   margin: 0;
 }
 
+.Header {
+  padding-top: 2rem;
+}
 
 .Main {
   position: relative;
